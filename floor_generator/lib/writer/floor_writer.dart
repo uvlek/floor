@@ -10,7 +10,7 @@ class FloorWriter extends Writer {
   @nonNull
   @override
   Class write() {
-    final databaseBuilderName = '_\$${_databaseName}Builder';
+    final databaseBuilderName = '\$${_databaseName}Builder';
 
     final databaseBuilderMethod = Method((builder) => builder
       ..name = 'databaseBuilder'

@@ -50,9 +50,9 @@ class UpdateMethodWriter implements Writer {
     final String entityClassName,
   ) {
     if (_method.changesMultipleItems) {
-      return 'return _${entityClassName}UpdateAdapter.updateListAndReturnChangedRows($methodSignatureParameterName, ${_method.onConflict});';
+      return 'return ${entityClassName}UpdateAdapter.updateListAndReturnChangedRows($methodSignatureParameterName, ${_method.onConflict});';
     } else {
-      return 'return _${entityClassName}UpdateAdapter.updateAndReturnChangedRows($methodSignatureParameterName, ${_method.onConflict});';
+      return 'return ${entityClassName}UpdateAdapter.updateAndReturnChangedRows($methodSignatureParameterName, ${_method.onConflict});';
     }
   }
 
@@ -62,9 +62,9 @@ class UpdateMethodWriter implements Writer {
     final String entityClassName,
   ) {
     if (_method.changesMultipleItems) {
-      return 'await _${entityClassName}UpdateAdapter.updateList($methodSignatureParameterName, ${_method.onConflict});';
+      return 'await ${entityClassName}UpdateAdapter.updateList($methodSignatureParameterName, ${_method.onConflict});';
     } else {
-      return 'await _${entityClassName}UpdateAdapter.update($methodSignatureParameterName, ${_method.onConflict});';
+      return 'await ${entityClassName}UpdateAdapter.update($methodSignatureParameterName, ${_method.onConflict});';
     }
   }
 }

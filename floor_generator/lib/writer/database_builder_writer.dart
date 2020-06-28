@@ -11,7 +11,7 @@ class DatabaseBuilderWriter extends Writer {
   @nonNull
   @override
   Class write() {
-    final databaseBuilderName = '_\$${_databaseName}Builder';
+    final databaseBuilderName = '\$${_databaseName}Builder';
 
     final nameField = Field((builder) => builder
       ..name = 'name'
@@ -66,7 +66,7 @@ class DatabaseBuilderWriter extends Writer {
         final path = name != null
           ? await sqfliteDatabaseFactory.getDatabasePath(name)
           : ':memory:';
-        final database = _\$$_databaseName();
+        final database = \$$_databaseName();
         database.database = await database.open(
           path,
           _migrations,

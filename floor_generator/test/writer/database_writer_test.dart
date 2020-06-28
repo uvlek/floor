@@ -30,8 +30,8 @@ void main() {
     final actual = DatabaseWriter(database).write();
 
     expect(actual, equalsDart(r'''
-      class _$TestDatabase extends TestDatabase {
-        _$TestDatabase([StreamController<String> listener]) {
+      class $TestDatabase extends TestDatabase {
+        $TestDatabase([StreamController<String> listener]) {
          changeListener = listener ?? StreamController<String>.broadcast();
         }
       
@@ -84,8 +84,8 @@ void main() {
     final actual = DatabaseWriter(database).write();
 
     expect(actual, equalsDart(r'''
-      class _$TestDatabase extends TestDatabase {
-        _$TestDatabase([StreamController<String> listener]) {
+      class $TestDatabase extends TestDatabase {
+        $TestDatabase([StreamController<String> listener]) {
           changeListener = listener ?? StreamController<String>.broadcast();
         }
         
@@ -146,8 +146,8 @@ void main() {
     final actual = DatabaseWriter(database).write();
 
     expect(actual, equalsDart(r"""
-      class _$TestDatabase extends TestDatabase {
-        _$TestDatabase([StreamController<String> listener]) {
+      class $TestDatabase extends TestDatabase {
+        $TestDatabase([StreamController<String> listener]) {
          changeListener = listener ?? StreamController<String>.broadcast();
         }
       

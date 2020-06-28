@@ -39,8 +39,8 @@ void main() {
             .write();
 
     expect(actual, equalsDart(r'''
-        class _$PersonDao extends PersonDao {
-          _$PersonDao(this.database, this.changeListener)
+        class $PersonDao extends PersonDao {
+          $PersonDao(this.database, this.changeListener)
               : _queryAdapter = QueryAdapter(database),
                 _personInsertionAdapter = InsertionAdapter(
                     database,
@@ -121,8 +121,8 @@ void main() {
             .write();
 
     expect(actual, equalsDart(r'''
-        class _$PersonDao extends PersonDao {
-          _$PersonDao(this.database, this.changeListener)
+        class $PersonDao extends PersonDao {
+          $PersonDao(this.database, this.changeListener)
               : _queryAdapter = QueryAdapter(database, changeListener),
                 _personInsertionAdapter = InsertionAdapter(
                     database,
@@ -202,8 +202,8 @@ void main() {
         DaoWriter(dao, {dao.deletionMethods[0].entity}, false).write();
 
     expect(actual, equalsDart(r'''
-        class _$PersonDao extends PersonDao {
-          _$PersonDao(this.database, this.changeListener)
+        class $PersonDao extends PersonDao {
+          $PersonDao(this.database, this.changeListener)
               : _personInsertionAdapter = InsertionAdapter(
                     database,
                     'Person',
@@ -280,8 +280,8 @@ void main() {
     final actual = DaoWriter(dao, {otherEntity}, false).write();
 
     expect(actual, equalsDart(r'''
-      class _$PersonDao extends PersonDao {
-        _$PersonDao(this.database, this.changeListener)
+      class $PersonDao extends PersonDao {
+        $PersonDao(this.database, this.changeListener)
             : _personInsertionAdapter = InsertionAdapter(
                   database,
                   'Person',
@@ -346,8 +346,8 @@ void main() {
     final actual = DaoWriter(dao, {}, true).write();
 
     expect(actual, equalsDart(r'''
-        class _$PersonDao extends PersonDao {
-          _$PersonDao(this.database, this.changeListener)
+        class $PersonDao extends PersonDao {
+          $PersonDao(this.database, this.changeListener)
               : _personInsertionAdapter = InsertionAdapter(
                     database,
                     'Person',

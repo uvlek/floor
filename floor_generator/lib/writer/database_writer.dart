@@ -22,7 +22,7 @@ class DatabaseWriter implements Writer {
     final databaseName = database.name;
 
     return Class((builder) => builder
-      ..name = '_\$$databaseName'
+      ..name = '\$$databaseName'
       ..extend = refer(databaseName)
       ..methods.add(_generateOpenMethod(database))
       ..methods.addAll(_generateDaoGetters(database))
@@ -57,7 +57,7 @@ class DatabaseWriter implements Writer {
         ..returns = refer(daoTypeName)
         ..name = daoGetterName
         ..body = Code(
-            'return _${daoGetterName}Instance ??= _\$$daoTypeName(database, changeListener);'));
+            'return ${daoGetterName}Instance ??= \$$daoTypeName(database, changeListener);'));
     }).toList();
   }
 
@@ -69,7 +69,7 @@ class DatabaseWriter implements Writer {
 
       return Field((builder) => builder
         ..type = refer(daoTypeName)
-        ..name = '_${daoGetterName}Instance');
+        ..name = '${daoGetterName}Instance');
     }).toList();
   }
 

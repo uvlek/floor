@@ -50,9 +50,9 @@ class InsertionMethodWriter implements Writer {
     final String entityClassName,
   ) {
     if (_method.changesMultipleItems) {
-      return 'await _${entityClassName}InsertionAdapter.insertList($methodSignatureParameterName, ${_method.onConflict});';
+      return 'await ${entityClassName}InsertionAdapter.insertList($methodSignatureParameterName, ${_method.onConflict});';
     } else {
-      return 'await _${entityClassName}InsertionAdapter.insert($methodSignatureParameterName, ${_method.onConflict});';
+      return 'await ${entityClassName}InsertionAdapter.insert($methodSignatureParameterName, ${_method.onConflict});';
     }
   }
 
@@ -62,9 +62,9 @@ class InsertionMethodWriter implements Writer {
     final String entityClassName,
   ) {
     if (_method.changesMultipleItems) {
-      return 'return _${entityClassName}InsertionAdapter.insertListAndReturnIds($methodSignatureParameterName, ${_method.onConflict});';
+      return 'return ${entityClassName}InsertionAdapter.insertListAndReturnIds($methodSignatureParameterName, ${_method.onConflict});';
     } else {
-      return 'return _${entityClassName}InsertionAdapter.insertAndReturnId($methodSignatureParameterName, ${_method.onConflict});';
+      return 'return ${entityClassName}InsertionAdapter.insertAndReturnId($methodSignatureParameterName, ${_method.onConflict});';
     }
   }
 }

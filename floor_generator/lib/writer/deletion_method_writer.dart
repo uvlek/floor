@@ -50,9 +50,9 @@ class DeletionMethodWriter implements Writer {
     final String entityClassName,
   ) {
     if (_method.changesMultipleItems) {
-      return 'await _${entityClassName}DeletionAdapter.deleteList($methodSignatureParameterName);';
+      return 'await ${entityClassName}DeletionAdapter.deleteList($methodSignatureParameterName);';
     } else {
-      return 'await _${entityClassName}DeletionAdapter.delete($methodSignatureParameterName);';
+      return 'await ${entityClassName}DeletionAdapter.delete($methodSignatureParameterName);';
     }
   }
 
@@ -62,9 +62,9 @@ class DeletionMethodWriter implements Writer {
     final String entityClassName,
   ) {
     if (_method.changesMultipleItems) {
-      return 'return _${entityClassName}DeletionAdapter.deleteListAndReturnChangedRows($methodSignatureParameterName);';
+      return 'return ${entityClassName}DeletionAdapter.deleteListAndReturnChangedRows($methodSignatureParameterName);';
     } else {
-      return 'return _${entityClassName}DeletionAdapter.deleteAndReturnChangedRows($methodSignatureParameterName);';
+      return 'return ${entityClassName}DeletionAdapter.deleteAndReturnChangedRows($methodSignatureParameterName);';
     }
   }
 }

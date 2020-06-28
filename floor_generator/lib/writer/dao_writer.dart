@@ -29,7 +29,7 @@ class DaoWriter extends Writer {
 
     final daoName = dao.name;
     final classBuilder = ClassBuilder()
-      ..name = '_\$$daoName'
+      ..name = '\$$daoName'
       ..extend = refer(daoName)
       ..fields
           .addAll(_createFields(databaseFieldName, changeListenerFieldName));
@@ -66,7 +66,7 @@ class DaoWriter extends Writer {
           .toSet()
           .map((entity) {
         final constructor = entity.constructor;
-        final name = '_${entity.name.decapitalize()}Mapper';
+        final name = '${entity.name.decapitalize()}Mapper';
 
         return Field((builder) => builder
           ..name = name
@@ -84,7 +84,7 @@ class DaoWriter extends Writer {
 
       for (final entity in entities) {
         final entityClassName = entity.classElement.displayName;
-        final fieldName = '_${entityClassName.decapitalize()}InsertionAdapter';
+        final fieldName = '${entityClassName.decapitalize()}InsertionAdapter';
         final type = refer('InsertionAdapter<$entityClassName>');
 
         final field = Field((builder) => builder
@@ -112,7 +112,7 @@ class DaoWriter extends Writer {
 
       for (final entity in entities) {
         final entityClassName = entity.classElement.displayName;
-        final fieldName = '_${entityClassName.decapitalize()}UpdateAdapter';
+        final fieldName = '${entityClassName.decapitalize()}UpdateAdapter';
         final type = refer('UpdateAdapter<$entityClassName>');
 
         final field = Field((builder) => builder
@@ -140,7 +140,7 @@ class DaoWriter extends Writer {
 
       for (final entity in entities) {
         final entityClassName = entity.classElement.displayName;
-        final fieldName = '_${entityClassName.decapitalize()}DeletionAdapter';
+        final fieldName = '${entityClassName.decapitalize()}DeletionAdapter';
         final type = refer('DeletionAdapter<$entityClassName>');
 
         final field = Field((builder) => builder

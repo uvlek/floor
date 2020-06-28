@@ -25,7 +25,7 @@ void main() {
         } else {
           await (database as sqflite.Database)
               .transaction<void>((transaction) async {
-            final transactionDatabase = _$TestDatabase(changeListener)
+            final transactionDatabase = $TestDatabase(changeListener)
               ..database = transaction;
             await transactionDatabase.personDao.replacePersons(persons);
           });
