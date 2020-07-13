@@ -91,7 +91,7 @@ abstract class QueryableProcessor<T extends Queryable> extends Processor<T> {
     } else if (parameterType.isDartCoreString) {
       return '$parameterValue as String';
     } else if (parameterType.isDartCoreInt) {
-      return '$parameterValue as int';
+      return "($parameterValue == 'null' ? 0 : $parameterValue) as int";
     } else if (parameterType.isUint8List) {
       return '$parameterValue as Uint8List';
     } else {
